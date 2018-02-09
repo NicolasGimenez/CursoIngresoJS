@@ -10,8 +10,13 @@ function sumar()
 	num1=document.getElementById('numeroUno').value;
 	num2=document.getElementById('numeroDos').value;
 
-	par num1+num2
+	num1=parseInt(num1);// parseInt "I"mayuscula
+	num2=parseInt(num2);
 
-	alert("La suma es "+resultado+)//revisar
+	resultado=num1+num2;// la variable a la que le tengo que asignar un resultado va a la izquierda 
+
+	
+
+	alert("La suma es "+resultado);//revisar
 }
 
