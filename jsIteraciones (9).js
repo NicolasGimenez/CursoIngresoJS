@@ -3,9 +3,8 @@ function Mostrar()
 
 	var contador=0;
 	// declarar variables
-	//revisar y terminar
-	
 	var respuesta='si';
+	var numero;
 
 	while(respuesta!='no')
 	{
@@ -27,8 +26,11 @@ function Mostrar()
 				minimo=numero;
 			}
 		}
+		respuesta=prompt("desea salir igrese.. no ..de lo contrario cualquier tecla");
 	
 	}
+	document.getElementById('maximo').value=maximo;
+	document.getElementById('minimo').value=minimo;
 
 
 
