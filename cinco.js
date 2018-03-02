@@ -1,17 +1,29 @@
 function Mostrar()
-{
-	var dia;
-	dia=prompt("ingrese dia :");
+{	//act cinco.js parcial 1
+	var numeroUno;
+	var numeroDos;
+	var numeroTres;
+	var maximo=0;
+	
+	numeroUno=prompt("ingrese numero :");
+	numeroUno=parseInt(numeroUno);
+	numeroDos=prompt("ingrese numero :");
+	numeroDos=parseInt(numeroDos);
+	numeroTres=prompt("ingrese numero :");
+	numeroTres=parseInt(numeroTres);
 
-
-	switch(dia)
+	if(numeroUno>maximo)
 	{
-		case "sabado":
-		case "domingo":
-					  alert("es fin de semana");
-					  break;
-		default:
-				alert("a trabajar");
-				break;
+		maximo=numeroUno;
 	}
+	if(numeroDos>maximo)
+	{
+		maximo=numeroDos;
+	}
+	if(numeroTres>maximo)
+	{
+		maximo=numeroTres;
+	}
+	alert("el numero maximo es : "+maximo);
+
 }

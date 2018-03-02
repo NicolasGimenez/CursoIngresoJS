@@ -1,14 +1,18 @@
 
 function Mostrar()
-{
-	var num1;
-	var resultado;
+{	//act uno.js  parcial 1 ..
+	var base;
+	var altura;
+	var perimetro;
+	var superficie;
 
+	base=document.getElementById('laBase').value;
+	base=parseInt(base);
+	altura=prompt("ingrese la altura");
+	altura=parseInt(altura);
+	perimetro=base*3;
+	superficie=(base*altura)/2;
 
-	num1=document.getElementById('laBase').value;
-
-	resultado=num1*4;
-
-	alert("el perimetro es  "+resultado);
-	
+	alert("El perimetro es :"+perimetro);
+	alert("La superficie es : "+superficie);
 }
