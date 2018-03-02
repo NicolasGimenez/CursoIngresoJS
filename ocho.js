@@ -1,48 +1,78 @@
 function Mostrar()
-{	// es el parcial 1 act 8
-	var numero;
-	var respuesta="si";
-	var cantidadPares=0;
-	var suma=0;
-	var numerosIngresados=0;
-	var contador=0;
-	var maximo;
-	var minimo;
-	
-	while(respuesta=="si")
+{
+	var nombreAnimal;
+	var pesoAnimal;
+	var temperaturaAnimal;
+	var respuesta = "si";
+	var pesoAnimalMaximo=0;
+	var nombreAnimalPesado;
+	var nombreAnimalTemperaturaBaja;
+	var cantidadTemperaturapar=0;
+	var cantidadAnimales=0;
+	var temperaturaMaxima;
+	var temperaturaMinima;
+	var temperaturaAnimalBaja;
+	var sumaPeso=0;
+	while(respuesta!="no")
 	{	
-		contador=contador+1;
-		numero=prompt("ingrese un numero positivo");
-		numero=parseInt(numero);
-		numerosIngresados=numerosIngresados+1;// el isNaN(numero) mientras no sea un numero no sale de ahi oy mientras que no sea positivo tampoco sale
-	while(isNaN(numero) || numero<0 )//esto es validar que hasta que no me de un numero no salis del while
-	{	
-		numero=prompt("error ingresar numero positivo");
-		numero=parseInt(numero);
-	}
-	if(numero%2==0 && numero!=0)//le tengo que poner el distinto de 0 por que sino me toma al cero como par 
+		cantidadAnimales=cantidadAnimales+1
+		nombreAnimal=prompt("ingrese nombre de animal :");
+		pesoAnimal=prompt("ingrese peso del animal :");
+		pesoAnimal=parseInt(pesoAnimal);
+		while(pesoAnimal<=0 || isNaN(pesoAnimal) )
 		{
-			cantidadPares=cantidadPares+1;
+			pesoAnimal=prompt("error por favor ingrese el peso del animal : ");
+			pesoAnimal=parseInt(pesoAnimal);
 		}
-	 suma=suma+numero;
-	 promedioIngresados=suma/numerosIngresados;
-	 if(contador==1)
-	 {
-	 	maximo=numero;
-	 	minimo=numero;
-	 }
-	 if(numero>maximo)
-	 {
-	 	maximo=numero;
-	 }
-	 if (numero<minimo)
-	 {
-	 	minimo=numero;
-	 }
-	 respuesta=prompt("si desea continuar ingrese si");
+		temperaturaAnimal=prompt("ingrese la temperatura del habitat del animal :");
+		temperaturaAnimal=parseInt(temperaturaAnimal);
+		while( isNaN(temperaturaAnimal)|| temperaturaAnimal<-40|| temperaturaAnimal>40)
+		{
+			temperaturaAnimal=prompt(" error por favor ingrese la temperatura del habitat del animal(-40 a 40+) :");
+			temperaturaAnimal=parseInt(temperaturaAnimal);
+		}
+		if(pesoAnimal>pesoAnimalMaximo)
+		{
+			pesoAnimalMaximo=pesoAnimal;
+			nombreAnimalPesado=nombreAnimal;
+		}
+		if(cantidadAnimales==1)
+		{
+			temperaturaAnimalBaja=temperaturaAnimal;
+		}
+		if(temperaturaAnimal<temperaturaAnimalBaja)
+		{
+			temperaturaAnimalBaja=temperaturaAnimal;
+			nombreAnimalTemperaturaBaja=nombreAnimal;
+		}
+		if(temperaturaAnimal%2 ==0 && temperaturaAnimal!=0)
+		{
+			cantidadTemperaturapar=cantidadTemperaturapar+1;
+		}
+		sumaPeso=pesoAnimal+sumaPeso;
+		promedioPesos=sumaPeso/cantidadAnimales;
+		if(cantidadAnimales==1)
+		{
+			temperaturaMaxima=temperaturaAnimal;
+			temperaturaMinima=temperaturaAnimal;
+		}
+		if(temperaturaAnimal>temperaturaMaxima)
+		{
+			temperaturaMaxima=temperaturaAnimal;
+		}
+		if(temperaturaAnimal<temperaturaMinima)
+		{
+			temperaturaMinima=temperaturaAnimal;
+		}
+
+		respuesta=prompt("desea salir ingrese : no");
+
 	}
-	document.write("<br>La cantidad de numero pares es  "+cantidadPares);
-	document.write("<br>El promedio de los numero ingresados es  "+promedioIngresados);
-	document.write("<br>La suma de todos los numero es  "+suma);
-	document.write("<br>El numero maximo es"+maximo+"  y el minimo es "+minimo);
+	document.write("el nombre del animal mas pesado es : "+nombreAnimalPesado);
+	document.write("<br> el nombre del animal de la temperatura mas baja es "+temperaturaAnimalBaja);
+	document.write("<br> la cantidad de temperaturas pares es : "+cantidadTemperaturapar);
+	document.write("<br> el promedio de todos los pesos es : "+promedioPesos);
+	document.write("<br> la temperatura maxima es :"+temperaturaMaxima);
+	document.write("<br> la temperatura minima es :"+temperaturaMinima);
+
 }
