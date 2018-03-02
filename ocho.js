@@ -20,7 +20,7 @@ function Mostrar()
 		numero=prompt("error ingresar numero positivo");
 		numero=parseInt(numero);
 	}
-	if(numero%2==0)
+	if(numero%2==0 && numero!=0)//le tengo que poner el distinto de 0 por que sino me toma al cero como par 
 		{
 			cantidadPares=cantidadPares+1;
 		}
